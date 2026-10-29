@@ -1,0 +1,53 @@
+import { mergeProps } from "@base-ui/react/merge-props";
+import { useRender } from "@base-ui/react/use-render";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "cn";
+
+const badgeVariants = cva(
+	"group/badge focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 inline-flex w-fit shrink-0 items-center justify-center gap-1.5 overflow-hidden rounded-none border-0 bg-transparent px-0 py-0 text-[0.625rem] font-semibold tracking-widest whitespace-nowrap uppercase transition-colors focus-visible:ring-[3px] has-data-[icon=inline-end]:pe-0 has-data-[icon=inline-start]:ps-0 [&>svg]:pointer-events-none [&>svg]:size-3!",
+	{
+		variants: {
+			variant: {
+				default: "text-foreground [a]:hover:text-foreground/70",
+				secondary: "text-muted-foreground [a]:hover:text-foreground",
+				destructive:
+					"text-destructive focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 [a]:hover:text-destructive/70",
+				outline: "text-foreground [a]:hover:text-foreground/70",
+				ghost: "text-muted-foreground hover:text-foreground",
+				link: "text-foreground underline-offset-4 hover:underline",
+				info: "text-blue-600 dark:text-blue-400 [a]:hover:text-blue-500",
+				success:
+					"text-emerald-600 dark:text-emerald-400 [a]:hover:text-emerald-500",
+				warning: "text-amber-600 dark:text-amber-400 [a]:hover:text-amber-500",
+				subtle: "text-slate-600 dark:text-slate-400 [a]:hover:text-slate-500"
+			}
+		},
+		defaultVariants: {
+			variant: "default"
+		}
+	}
+);
+
+function Badge({
+	className,
+	variant = "default",
+	render,
+	...props
+}: useRender.ComponentProps<"span"> & VariantProps<typeof badgeVariants>) {
+	return useRender({
+		defaultTagName: "span",
+		props: mergeProps<"span">(
+			{
+				className: cn(badgeVariants({ variant }), className)
+			},
+			props
+		),
+		render,
+		state: {
+			slot: "badge",
+			variant
+		}
+	});
+}
+
+export { Badge, badgeVariants };

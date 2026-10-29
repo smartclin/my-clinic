@@ -1,0 +1,276 @@
+{
+	"type": "diff",
+	"version": "9",
+	"dialect": "postgres",
+	"id": "4c37eff4-7c1d-48dd-a62c-f35060e618f8",
+	"prevIds": ["3f92598f-56c0-45a5-bfac-95a18b6994ea"],
+	"footprints": [
+		{
+			"statementType": "create_table",
+			"statementTarget": ["table", "public", "drug_formulary"],
+			"writes": [
+				"s|tbl|public.drug_formulary",
+				"n|tbl|public.drug_formulary",
+				"e|tbl|public.drug_formulary",
+				"n|rel|public.drug_formulary",
+				"n|type|public.drug_formulary",
+				"n|rel|public.drug_formulary_pkey"
+			],
+			"reads": ["n|sch|public"]
+		},
+		{
+			"statementType": "create_index",
+			"statementTarget": [
+				"index",
+				"public",
+				"drug_formulary",
+				"drug_formulary_generic_idx"
+			],
+			"writes": [
+				"s|idx|public.drug_formulary_generic_idx",
+				"n|idx|public.drug_formulary_generic_idx",
+				"e|idx|public.drug_formulary_generic_idx",
+				"n|rel|public.drug_formulary_generic_idx"
+			],
+			"reads": [
+				"n|tbl|public.drug_formulary",
+				"n|sch|public",
+				"n|col|public.drug_formulary.generic_name"
+			]
+		},
+		{
+			"statementType": "create_index",
+			"statementTarget": [
+				"index",
+				"public",
+				"drug_formulary",
+				"drug_formulary_category_idx"
+			],
+			"writes": [
+				"s|idx|public.drug_formulary_category_idx",
+				"n|idx|public.drug_formulary_category_idx",
+				"e|idx|public.drug_formulary_category_idx",
+				"n|rel|public.drug_formulary_category_idx"
+			],
+			"reads": [
+				"n|tbl|public.drug_formulary",
+				"n|sch|public",
+				"n|col|public.drug_formulary.pharmacological_category"
+			]
+		}
+	],
+	"deltas": [
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"name": "drug_formulary",
+				"isRlsEnabled": false,
+				"entityType": "tables"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "drug_formulary",
+				"name": "id",
+				"type": "varchar(64)",
+				"typeSchema": null,
+				"notNull": true,
+				"dimensions": 0,
+				"default": null,
+				"generated": null,
+				"identity": null,
+				"entityType": "columns"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "drug_formulary",
+				"name": "generic_name",
+				"type": "text",
+				"typeSchema": null,
+				"notNull": true,
+				"dimensions": 0,
+				"default": null,
+				"generated": null,
+				"identity": null,
+				"entityType": "columns"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "drug_formulary",
+				"name": "pharmacological_category",
+				"type": "text",
+				"typeSchema": null,
+				"notNull": true,
+				"dimensions": 0,
+				"default": null,
+				"generated": null,
+				"identity": null,
+				"entityType": "columns"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "drug_formulary",
+				"name": "atc_code",
+				"type": "varchar(16)",
+				"typeSchema": null,
+				"notNull": false,
+				"dimensions": 0,
+				"default": null,
+				"generated": null,
+				"identity": null,
+				"entityType": "columns"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "drug_formulary",
+				"name": "aware_classification",
+				"type": "varchar(16)",
+				"typeSchema": null,
+				"notNull": false,
+				"dimensions": 0,
+				"default": null,
+				"generated": null,
+				"identity": null,
+				"entityType": "columns"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "drug_formulary",
+				"name": "data",
+				"type": "jsonb",
+				"typeSchema": null,
+				"notNull": true,
+				"dimensions": 0,
+				"default": null,
+				"generated": null,
+				"identity": null,
+				"entityType": "columns"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "drug_formulary",
+				"name": "source_edition",
+				"type": "varchar(32)",
+				"typeSchema": null,
+				"notNull": true,
+				"dimensions": 0,
+				"default": "'EDA-2024'",
+				"generated": null,
+				"identity": null,
+				"entityType": "columns"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "drug_formulary",
+				"name": "created_at",
+				"type": "timestamp with time zone",
+				"typeSchema": null,
+				"notNull": true,
+				"dimensions": 0,
+				"default": "now()",
+				"generated": null,
+				"identity": null,
+				"entityType": "columns"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "drug_formulary",
+				"name": "updated_at",
+				"type": "timestamp with time zone",
+				"typeSchema": null,
+				"notNull": true,
+				"dimensions": 0,
+				"default": "now()",
+				"generated": null,
+				"identity": null,
+				"entityType": "columns"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "drug_formulary",
+				"name": "drug_formulary_generic_idx",
+				"nameExplicit": true,
+				"columns": [
+					{
+						"value": "generic_name",
+						"isExpression": false,
+						"asc": true,
+						"nullsFirst": false,
+						"opclass": null
+					}
+				],
+				"isUnique": false,
+				"where": null,
+				"with": "",
+				"method": "btree",
+				"concurrently": false,
+				"entityType": "indexes"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "drug_formulary",
+				"name": "drug_formulary_category_idx",
+				"nameExplicit": true,
+				"columns": [
+					{
+						"value": "pharmacological_category",
+						"isExpression": false,
+						"asc": true,
+						"nullsFirst": false,
+						"opclass": null
+					}
+				],
+				"isUnique": false,
+				"where": null,
+				"with": "",
+				"method": "btree",
+				"concurrently": false,
+				"entityType": "indexes"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "drug_formulary",
+				"name": "drug_formulary_pkey",
+				"columns": ["id"],
+				"nameExplicit": false,
+				"entityType": "pks"
+			}
+		}
+	]
+}

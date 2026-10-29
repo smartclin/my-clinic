@@ -1,0 +1,34 @@
+{
+  "servers": {
+    "better-auth": {
+      "type": "http",
+      "url": "https://mcp.inkeep.com/better-auth/mcp"
+    },
+    "better-t-stack": {
+      "args": [
+        "create-better-t-stack@latest",
+        "mcp"
+      ],
+      "command": "bunx"
+    },
+    "context7": {
+      "args": [
+        "-y",
+        "@upstash/context7-mcp"
+      ],
+      "command": "npx"
+    },
+    "shadcn": {
+      "args": [
+        "-y",
+        "shadcn@latest",
+        "mcp"
+      ],
+      "command": "npx"
+    },
+    "smart-app": {
+      "type": "http",
+      "url": "http://localhost:3000/api/mcp"
+    }
+  }
+}

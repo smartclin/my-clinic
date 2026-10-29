@@ -1,0 +1,160 @@
+{
+	"type": "diff",
+	"version": "9",
+	"dialect": "postgres",
+	"id": "be54fec9-6102-40b0-be9e-6c40955e91b5",
+	"prevIds": ["de30b5f4-36ba-4f20-95ce-109b85d76779"],
+	"footprints": [
+		{
+			"statementType": "alter_column",
+			"statementTarget": ["column", "public", "account", "created_at"],
+			"writes": ["s|colprop|public.account.created_at.default"],
+			"reads": [
+				"n|tbl|public.account",
+				"n|sch|public",
+				"n|col|public.account.created_at"
+			],
+			"sqlHash": "12f6f5d87b7e8265"
+		},
+		{
+			"statementType": "alter_column",
+			"statementTarget": ["column", "public", "invitation", "created_at"],
+			"writes": ["s|colprop|public.invitation.created_at.default"],
+			"reads": [
+				"n|tbl|public.invitation",
+				"n|sch|public",
+				"n|col|public.invitation.created_at"
+			],
+			"sqlHash": "de9eb5a1bd53ba20"
+		},
+		{
+			"statementType": "alter_column",
+			"statementTarget": [
+				"column",
+				"public",
+				"organization_role",
+				"created_at"
+			],
+			"writes": ["s|colprop|public.organization_role.created_at.default"],
+			"reads": [
+				"n|tbl|public.organization_role",
+				"n|sch|public",
+				"n|col|public.organization_role.created_at"
+			],
+			"sqlHash": "87ebcbb92ed8e891"
+		},
+		{
+			"statementType": "alter_column",
+			"statementTarget": ["column", "public", "session", "created_at"],
+			"writes": ["s|colprop|public.session.created_at.default"],
+			"reads": [
+				"n|tbl|public.session",
+				"n|sch|public",
+				"n|col|public.session.created_at"
+			],
+			"sqlHash": "69ecc75e37bcc805"
+		},
+		{
+			"statementType": "alter_column",
+			"statementTarget": ["column", "public", "user", "created_at"],
+			"writes": ["s|colprop|public.user.created_at.default"],
+			"reads": [
+				"n|tbl|public.user",
+				"n|sch|public",
+				"n|col|public.user.created_at"
+			],
+			"sqlHash": "f05dd3378e8fe4f9"
+		},
+		{
+			"statementType": "alter_column",
+			"statementTarget": ["column", "public", "user", "updated_at"],
+			"writes": ["s|colprop|public.user.updated_at.default"],
+			"reads": [
+				"n|tbl|public.user",
+				"n|sch|public",
+				"n|col|public.user.updated_at"
+			],
+			"sqlHash": "9e85c2b5c698fd02"
+		},
+		{
+			"statementType": "alter_column",
+			"statementTarget": ["column", "public", "verification", "created_at"],
+			"writes": ["s|colprop|public.verification.created_at.default"],
+			"reads": [
+				"n|tbl|public.verification",
+				"n|sch|public",
+				"n|col|public.verification.created_at"
+			],
+			"sqlHash": "736ab5778715d006"
+		},
+		{
+			"statementType": "alter_column",
+			"statementTarget": ["column", "public", "verification", "updated_at"],
+			"writes": ["s|colprop|public.verification.updated_at.default"],
+			"reads": [
+				"n|tbl|public.verification",
+				"n|sch|public",
+				"n|col|public.verification.updated_at"
+			],
+			"sqlHash": "eccbbd6a0bca9a87"
+		}
+	],
+	"deltas": [
+		{
+			"op": "alter",
+			"key": "columns\u0000[\"public\",\"account\",\"created_at\"]",
+			"set": {
+				"default": "now()"
+			}
+		},
+		{
+			"op": "alter",
+			"key": "columns\u0000[\"public\",\"invitation\",\"created_at\"]",
+			"set": {
+				"default": "now()"
+			}
+		},
+		{
+			"op": "alter",
+			"key": "columns\u0000[\"public\",\"organization_role\",\"created_at\"]",
+			"set": {
+				"default": "now()"
+			}
+		},
+		{
+			"op": "alter",
+			"key": "columns\u0000[\"public\",\"session\",\"created_at\"]",
+			"set": {
+				"default": "now()"
+			}
+		},
+		{
+			"op": "alter",
+			"key": "columns\u0000[\"public\",\"user\",\"created_at\"]",
+			"set": {
+				"default": "now()"
+			}
+		},
+		{
+			"op": "alter",
+			"key": "columns\u0000[\"public\",\"user\",\"updated_at\"]",
+			"set": {
+				"default": "now()"
+			}
+		},
+		{
+			"op": "alter",
+			"key": "columns\u0000[\"public\",\"verification\",\"created_at\"]",
+			"set": {
+				"default": "now()"
+			}
+		},
+		{
+			"op": "alter",
+			"key": "columns\u0000[\"public\",\"verification\",\"updated_at\"]",
+			"set": {
+				"default": "now()"
+			}
+		}
+	]
+}

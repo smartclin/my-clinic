@@ -1,0 +1,344 @@
+{
+	"type": "diff",
+	"version": "9",
+	"dialect": "postgres",
+	"id": "3f92598f-56c0-45a5-bfac-95a18b6994ea",
+	"prevIds": ["be54fec9-6102-40b0-be9e-6c40955e91b5"],
+	"footprints": [
+		{
+			"statementType": "create_table",
+			"statementTarget": ["table", "public", "lms_reference"],
+			"writes": [
+				"s|tbl|public.lms_reference",
+				"n|tbl|public.lms_reference",
+				"e|tbl|public.lms_reference",
+				"n|rel|public.lms_reference",
+				"n|type|public.lms_reference",
+				"n|rel|public.lms_reference_pkey"
+			],
+			"reads": ["n|sch|public", "n|enum|public.patient_gender"]
+		},
+		{
+			"statementType": "create_index",
+			"statementTarget": [
+				"index",
+				"public",
+				"lms_reference",
+				"lms_ref_lookup_idx"
+			],
+			"writes": [
+				"s|idx|public.lms_ref_lookup_idx",
+				"n|idx|public.lms_ref_lookup_idx",
+				"e|idx|public.lms_ref_lookup_idx",
+				"n|rel|public.lms_ref_lookup_idx"
+			],
+			"reads": [
+				"n|tbl|public.lms_reference",
+				"n|sch|public",
+				"n|col|public.lms_reference.gender",
+				"n|col|public.lms_reference.metric",
+				"n|col|public.lms_reference.x"
+			]
+		}
+	],
+	"deltas": [
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"name": "lms_reference",
+				"isRlsEnabled": false,
+				"entityType": "tables"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "lms_reference",
+				"name": "id",
+				"type": "varchar(96)",
+				"typeSchema": null,
+				"notNull": true,
+				"dimensions": 0,
+				"default": null,
+				"generated": null,
+				"identity": null,
+				"entityType": "columns"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "lms_reference",
+				"name": "gender",
+				"type": "patient_gender",
+				"typeSchema": "public",
+				"notNull": true,
+				"dimensions": 0,
+				"default": null,
+				"generated": null,
+				"identity": null,
+				"entityType": "columns"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "lms_reference",
+				"name": "metric",
+				"type": "varchar(16)",
+				"typeSchema": null,
+				"notNull": true,
+				"dimensions": 0,
+				"default": null,
+				"generated": null,
+				"identity": null,
+				"entityType": "columns"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "lms_reference",
+				"name": "x",
+				"type": "real",
+				"typeSchema": null,
+				"notNull": true,
+				"dimensions": 0,
+				"default": null,
+				"generated": null,
+				"identity": null,
+				"entityType": "columns"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "lms_reference",
+				"name": "l",
+				"type": "real",
+				"typeSchema": null,
+				"notNull": true,
+				"dimensions": 0,
+				"default": null,
+				"generated": null,
+				"identity": null,
+				"entityType": "columns"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "lms_reference",
+				"name": "m",
+				"type": "real",
+				"typeSchema": null,
+				"notNull": true,
+				"dimensions": 0,
+				"default": null,
+				"generated": null,
+				"identity": null,
+				"entityType": "columns"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "lms_reference",
+				"name": "s",
+				"type": "real",
+				"typeSchema": null,
+				"notNull": true,
+				"dimensions": 0,
+				"default": null,
+				"generated": null,
+				"identity": null,
+				"entityType": "columns"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "lms_reference",
+				"name": "s_unit",
+				"type": "varchar(4)",
+				"typeSchema": null,
+				"notNull": true,
+				"dimensions": 0,
+				"default": "'cv'",
+				"generated": null,
+				"identity": null,
+				"entityType": "columns"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "lms_reference",
+				"name": "sd3neg",
+				"type": "real",
+				"typeSchema": null,
+				"notNull": false,
+				"dimensions": 0,
+				"default": null,
+				"generated": null,
+				"identity": null,
+				"entityType": "columns"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "lms_reference",
+				"name": "sd2neg",
+				"type": "real",
+				"typeSchema": null,
+				"notNull": false,
+				"dimensions": 0,
+				"default": null,
+				"generated": null,
+				"identity": null,
+				"entityType": "columns"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "lms_reference",
+				"name": "sd1neg",
+				"type": "real",
+				"typeSchema": null,
+				"notNull": false,
+				"dimensions": 0,
+				"default": null,
+				"generated": null,
+				"identity": null,
+				"entityType": "columns"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "lms_reference",
+				"name": "sd0",
+				"type": "real",
+				"typeSchema": null,
+				"notNull": false,
+				"dimensions": 0,
+				"default": null,
+				"generated": null,
+				"identity": null,
+				"entityType": "columns"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "lms_reference",
+				"name": "sd1pos",
+				"type": "real",
+				"typeSchema": null,
+				"notNull": false,
+				"dimensions": 0,
+				"default": null,
+				"generated": null,
+				"identity": null,
+				"entityType": "columns"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "lms_reference",
+				"name": "sd2pos",
+				"type": "real",
+				"typeSchema": null,
+				"notNull": false,
+				"dimensions": 0,
+				"default": null,
+				"generated": null,
+				"identity": null,
+				"entityType": "columns"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "lms_reference",
+				"name": "sd3pos",
+				"type": "real",
+				"typeSchema": null,
+				"notNull": false,
+				"dimensions": 0,
+				"default": null,
+				"generated": null,
+				"identity": null,
+				"entityType": "columns"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "lms_reference",
+				"name": "lms_ref_lookup_idx",
+				"nameExplicit": true,
+				"columns": [
+					{
+						"value": "gender",
+						"isExpression": false,
+						"asc": true,
+						"nullsFirst": false,
+						"opclass": null
+					},
+					{
+						"value": "metric",
+						"isExpression": false,
+						"asc": true,
+						"nullsFirst": false,
+						"opclass": null
+					},
+					{
+						"value": "x",
+						"isExpression": false,
+						"asc": true,
+						"nullsFirst": false,
+						"opclass": null
+					}
+				],
+				"isUnique": false,
+				"where": null,
+				"with": "",
+				"method": "btree",
+				"concurrently": false,
+				"entityType": "indexes"
+			}
+		},
+		{
+			"op": "create",
+			"row": {
+				"schema": "public",
+				"table": "lms_reference",
+				"name": "lms_reference_pkey",
+				"columns": ["id"],
+				"nameExplicit": false,
+				"entityType": "pks"
+			}
+		}
+	]
+}
